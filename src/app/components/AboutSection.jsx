@@ -23,31 +23,31 @@ const TAB_DATA = [
     id: "education",
     content: (
       <>
-      <ul className="list-disc pl-2">
-        <li>Analise e Desenvolvimento de Sistemas</li>
-        <li>Descomplica UniAmérica Centro Universitário</li>
-      </ul>
-      <ul className="list-disc pl-2 mt-2">
-        <li>Ciência da Computação</li>
-        <li>Universidade Brasileira Livre</li>
-      </ul>
-    </>
+        <ul className="list-disc pl-2">
+          <li>Analise e Desenvolvimento de Sistemas</li>
+          <li>Descomplica UniAmérica Centro Universitário</li>
+        </ul>
+        <ul className="mt-2 list-disc pl-2">
+          <li>Ciência da Computação</li>
+          <li>Universidade Brasileira Livre</li>
+        </ul>
+      </>
     ),
   },
   {
-    title: "Certifications",
-    id: "certifications",
+    title: "Languages",
+    id: "languages",
     content: (
       <>
-      <ul className="list-disc pl-2">
-        <li>IA</li>
-        <li>FIAP</li>
-      </ul>
-      <ul className="list-disc pl-2 mt-2">
-        <li>NLW Unite - Fullstack</li>
-        <li>Rocketseat</li>
-      </ul>
-    </>
+        <ul className="list-disc pl-2">
+          <li>Inglês</li>
+          <li>Nível intermediário</li>
+        </ul>
+        <ul className="mt-2 list-disc pl-2">
+          <li>Espanhol</li>
+          <li>Nível básico a intermediário</li>
+        </ul>
+      </>
     ),
   },
 ];
@@ -63,20 +63,22 @@ const AboutSection = () => {
   };
 
   return (
-    <section className="text-white" id="about">
-      <div className="md:grid md:grid-cols-2 gap-8 items-center py-8 px-4 xl:gap-16 sm:py-16 xl:px-16">
-        <Image src="/images/about-image.png" width={500} height={500} />
-        <div className="mt-4 md:mt-0 text-left flex flex-col h-full">
-          <h2 className="text-4xl font-bold text-white mb-4">About Me</h2>
+    <section className="text-black" id="about">
+      <div className="items-center gap-8 px-4 py-8 sm:py-16 md:grid md:grid-cols-2 xl:gap-16 xl:px-16">
+        <Image src="/images/about-image.png" alt="" width={500} height={500} />
+        <div className="mt-4 flex h-full flex-col text-left md:mt-0">
+          <h2 className="mb-4 text-4xl font-bold text-black">About Me</h2>
           <p className="text-base lg:text-lg">
-            I am a backend developer with a passion for creating
-            interactive and responsive web applications. I have experience
-            working with JavaScript, React, Redux, Node.js, Express, PostgreSQL,
-            Sequelize, HTML, CSS, and Git. I am a quick learner and I am always
-            looking to expand my knowledge and skill set. I am a team player and
-            I am excited to work with others to create amazing applications.
+            I am a Backend Developer with experience in Python, PHP, JavaScript,
+            TypeScript, Salesforce (Apex), BI, and QA, contributing to both B2B
+            and B2C projects. Currently, I focus on building automation tools in
+            Python, creating SEO solutions, optimizing digital processes, and
+            integrating APIs with platforms like OpenAI and HuggingFace. I am a
+            quick learner, always eager to grow my skills, and I value
+            collaboration to create impactful applications that transform
+            businesses and open new opportunities.
           </p>
-          <div className="flex flex-row justify-start mt-8">
+          <div className="mt-8 flex flex-row justify-start">
             <TabButton
               selectTab={() => handleTabChange("skills")}
               active={tab === "skills"}
@@ -92,11 +94,11 @@ const AboutSection = () => {
               Education{" "}
             </TabButton>
             <TabButton
-              selectTab={() => handleTabChange("certifications")}
-              active={tab === "certifications"}
+              selectTab={() => handleTabChange("languages")}
+              active={tab === "languages"}
             >
               {" "}
-              Certifications{" "}
+              Languages{" "}
             </TabButton>
           </div>
           <div className="mt-8">

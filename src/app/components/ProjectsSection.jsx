@@ -7,35 +7,39 @@ import { motion, useInView } from "framer-motion";
 const projectsData = [
   {
     id: 1,
-    title: "React Portfolio Website",
-    description: "Project 1 description",
+    title: "BRAVAS In Tech ❤️‍🔥",
+    description:
+      "Co-fundadora e CTO da BRAVAS In Tech uma comunidade que conecta, valoriza e apoia mulheres em tecnologia. Auxilio na estruturação tecnológica, implementação de soluções de automação e engajamento para mentorias e eventos. Nosso impacto já apoiou dezenas de mulheres a ingressarem e se fortalecerem no setor de TI, mostrando que nada aqui é feito sozinha. União e diversidade são nossa força.",
     image: "/images/projects/1.png",
-    tag: ["All", "Web"],
+    tag: ["All", "Community", "Web"],
     gitUrl: "/",
     previewUrl: "/",
   },
   {
     id: 2,
-    title: "Potography Portfolio Website",
-    description: "Project 2 description",
+    title: "Chatbot 🤖",
+    description:
+      "Desenvolvimento de chatbots inteligentes para atendimento digital, utilizando IA conversacional, automação de fluxos e integração com sistemas de CRM. Estruturei árvores de decisão, fluxos de exceção e lógicas de transbordo, além de modelar intents em NLP para maior precisão no atendimento. Também liderei a criação de um chatbot de sorteio para eventos, totalmente funcional, com gamificação e fluxos conversacionais dinâmicos.",
     image: "/images/projects/2.png",
-    tag: ["All", "Web"],
+    tag: ["All", "AI", "Automation", "Mobile"],
     gitUrl: "/",
     previewUrl: "/",
   },
   {
     id: 3,
-    title: "E-commerce Application",
-    description: "Project 3 description",
+    title: "AI & SEO Automation ⚙️",
+    description:
+      "Desenvolvo soluções de automação com Python e LLMs (OpenAI, HuggingFace) para otimizar SEO e processos digitais. Construí ferramentas para categorização de dados, escrita assistida e integração com APIs, aumentando produtividade e reduzindo tempo operacional em mais de 40%.",
     image: "/images/projects/3.png",
-    tag: ["All", "Web"],
+    tag: ["All", "AI", "Automation", "Web"],
     gitUrl: "/",
     previewUrl: "/",
   },
   {
     id: 4,
-    title: "Food Ordering Application",
-    description: "Project 4 description",
+    title: "Web Designer 🎨",
+    description:
+      "Crio layouts responsivos e elementos gráficos para e-commerce. Colaborei com UX e marketing, realizei testes A/B e refinei a experiência do usuário. Tecnologias: HTML, CSS, JavaScript, Git, Figma e Photoshop",
     image: "/images/projects/4.png",
     tag: ["All", "Mobile"],
     gitUrl: "/",
@@ -43,8 +47,9 @@ const projectsData = [
   },
   {
     id: 5,
-    title: "React Firebase Template",
-    description: "Authentication and CRUD operations",
+    title: "Dashboards & Data Insights 📊",
+    description:
+      "Construí dashboards no Looker Studio conectados diretamente a bancos de dados, entregando insights estratégicos para stakeholders. Também desenvolvi parsers em Python para coleta e processamento de dados, além de contribuir em backends com Django e Laravel.",
     image: "/images/projects/5.png",
     tag: ["All", "Web"],
     gitUrl: "/",
@@ -52,8 +57,9 @@ const projectsData = [
   },
   {
     id: 6,
-    title: "Full-stack Roadmap",
-    description: "Project 5 description",
+    title: "Automação de Testes & Confiabilidade ✓",
+    description:
+      "Desenvolvimento e execução de testes automatizados end-to-end com Cypress (TypeScript/JS), garantindo a confiabilidade e a escalabilidade de aplicações web. Modelei cenários críticos, integrei os testes em pipelines de CI/CD e reduzi em 40% os bugs em produção. Essa atuação trouxe maior qualidade, segurança e eficiência ao ciclo de desenvolvimento, fortalecendo a entrega contínua de valor para o produto.",
     image: "/images/projects/6.png",
     tag: ["All", "Web"],
     gitUrl: "/",
@@ -81,10 +87,10 @@ const ProjectsSection = () => {
 
   return (
     <section id="projects">
-      <h2 className="text-center text-4xl font-bold text-white mt-4 mb-8 md:mb-12">
-        My Projects
+      <h2 className="mb-8 mt-4 text-center text-4xl font-bold text-black md:mb-12">
+        My Work
       </h2>
-      <div className="text-white flex flex-row justify-center items-center gap-2 py-6">
+      <div className="flex flex-row items-center justify-center gap-2 py-6 text-black">
         <ProjectTag
           onClick={handleTagChange}
           name="All"
@@ -101,7 +107,7 @@ const ProjectsSection = () => {
           isSelected={tag === "Mobile"}
         />
       </div>
-      <ul ref={ref} className="grid md:grid-cols-3 gap-8 md:gap-12">
+      <ul ref={ref} className="grid gap-8 md:grid-cols-3 md:gap-12">
         {filteredProjects.map((project, index) => (
           <motion.li
             key={index}

@@ -4,6 +4,8 @@ import GithubIcon from "../../../public/github-icon.svg";
 import LinkedinIcon from "../../../public/linkedin-icon.svg";
 import Link from "next/link";
 import Image from "next/image";
+import logoSrc from "/public/images/logo.png";
+import Eyes from "/public/images/eyes.png";
 
 const EmailSection = () => {
   const [emailSubmitted, setEmailSubmitted] = useState(false);
@@ -42,31 +44,49 @@ const EmailSection = () => {
   return (
     <section
       id="contact"
-      className="grid md:grid-cols-2 my-12 md:my-12 py-24 gap-4 relative"
+      className="relative my-12 grid gap-4 py-24 md:my-12 md:grid-cols-2"
     >
-      <div className="bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-primary-900 to-transparent rounded-full h-80 w-80 z-0 blur-lg absolute top-3/4 -left-4 transform -translate-x-1/2 -translate-1/2"></div>
+      <Image
+        src={Eyes}
+        alt="Decorative Eyes"
+        width={100}
+        height={100}
+        className="-translate-1/2 absolute -left-4 top-3/4 z-0 -translate-x-1/2 transform opacity-70"
+      />
       <div className="z-10">
-        <h5 className="text-xl font-bold text-white my-2">
-          Let&apos;s Connect
+        <h5 className="my-2 text-xl font-bold text-black">
+          Let&apos;s Connect 🌈
         </h5>
-        <p className="text-[#ADB7BE] mb-4 max-w-md">
+        <p className="mb-4 max-w-md text-[#ADB7BE]">
           {" "}
-          I&apos;m currently looking for new opportunities, my inbox is always
-          open. Whether you have a question or just want to say hi, I&apos;ll
-          try my best to get back to you!
+          Always open to new opportunities and genuine conversations. If you’d
+          like to share an idea, ask a question, or just say hi, my inbox is
+          here for you. I’ll get back to you with care.
         </p>
         <div className="socials flex flex-row gap-2">
           <Link href="github.com">
             <Image src={GithubIcon} alt="Github Icon" />
           </Link>
-          <Link href="linkedin.com">
+          <Link href="https://www.linkedin.com/in/anaeggerdemier/">
             <Image src={LinkedinIcon} alt="Linkedin Icon" />
+          </Link>
+          <Link
+            href="https://bravasintech.com"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <Image
+              src={logoSrc}
+              alt="BRAVAS In Tech Logo"
+              width={50}
+              height={50}
+            />
           </Link>
         </div>
       </div>
       <div>
         {emailSubmitted ? (
-          <p className="text-green-500 text-sm mt-2">
+          <p className="mt-2 text-sm text-green-500">
             Email sent successfully!
           </p>
         ) : (
@@ -74,7 +94,7 @@ const EmailSection = () => {
             <div className="mb-6">
               <label
                 htmlFor="email"
-                className="text-white block mb-2 text-sm font-medium"
+                className="mb-2 block text-sm font-medium text-black"
               >
                 Your email
               </label>
@@ -83,14 +103,14 @@ const EmailSection = () => {
                 type="email"
                 id="email"
                 required
-                className="bg-[#18191E] border border-[#33353F] placeholder-[#9CA2A9] text-gray-100 text-sm rounded-lg block w-full p-2.5"
-                placeholder="jacob@google.com"
+                className="block w-full rounded-lg border border-[#33353F] bg-[#f4f4f4] p-2.5 text-sm text-gray-100 placeholder-[#9CA2A9]"
+                placeholder="maria@google.com"
               />
             </div>
             <div className="mb-6">
               <label
                 htmlFor="subject"
-                className="text-white block text-sm mb-2 font-medium"
+                className="mb-2 block text-sm font-medium text-black"
               >
                 Subject
               </label>
@@ -99,27 +119,28 @@ const EmailSection = () => {
                 type="text"
                 id="subject"
                 required
-                className="bg-[#18191E] border border-[#33353F] placeholder-[#9CA2A9] text-gray-100 text-sm rounded-lg block w-full p-2.5"
+                className="block w-full rounded-lg border border-[#33353F] bg-[#f4f4f4] p-2.5 text-sm text-gray-100 placeholder-[#9CA2A9]"
                 placeholder="Just saying hi"
               />
             </div>
             <div className="mb-6">
               <label
                 htmlFor="message"
-                className="text-white block text-sm mb-2 font-medium"
+                className="mb-2 block text-sm font-medium text-black"
               >
                 Message
               </label>
               <textarea
+                required
                 name="message"
                 id="message"
-                className="bg-[#18191E] border border-[#33353F] placeholder-[#9CA2A9] text-gray-100 text-sm rounded-lg block w-full p-2.5"
+                className="block w-full rounded-lg border border-[#33353F] bg-[#f4f4f4] p-2.5 text-sm text-gray-100 placeholder-[#9CA2A9]"
                 placeholder="Let's talk about..."
               />
             </div>
             <button
               type="submit"
-              className="bg-primary-500 hover:bg-primary-600 text-white font-medium py-2.5 px-5 rounded-lg w-full"
+              className="w-full rounded-lg bg-[#ed6a4c] px-5 py-2.5 font-medium text-black hover:bg-[#f4f4f4]"
             >
               Send Message
             </button>
